@@ -13,24 +13,19 @@
       AppSearch,
       characterList,
     },
-
-    data() {
-      return {
-        store,
-      }
-    },
+    
     methods: {
       getCharacters() {
         axios.
             get(store.apiURL)
             .then(element => {
-              console.log(element.data)
-              store.characterList = element.data
+              console.log(element.data);
+              store.characterList = element.data;
             })
             .catch(err => {
               console.log(err);
             })
-      }
+        }
     },
     created() {
       this.getCharacters();
@@ -49,6 +44,13 @@
   </main>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@use './style/general.scss';
+
+main {
+  width: 100%;
+  margin: 0;
+  background-color: chocolate;
+}
 
 </style>
