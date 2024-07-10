@@ -9,7 +9,7 @@
 
 <template>
     <div>
-        <div v-for="(element, index) in info.card_images">
+        <div v-for="element in info.card_images">
             <img :src="element.image_url" alt="">
         </div>
         <h2>{{ info.name }}</h2>
@@ -31,8 +31,10 @@ div {
     }
 
     h2 {
+        text-align: center;
+        font-size: 20px;
         color: white;
-        margin: 10px 0;
+        margin: 30px 0;
     }
 
     span {

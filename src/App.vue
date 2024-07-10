@@ -16,11 +16,26 @@
     
     methods: {
       getCharacters() {
+        let origURL = store.apiURL;
+        if (store.searchOption != '') {
+              origURL += `&archetype=${store.searchOption}`
+            }
         axios.
-            get(store.apiURL)
+            get(origURL)
             .then(element => {
               console.log(element.data);
               store.characterList = element.data;
+            })
+            .catch(err => {
+              console.log(err);
+            })
+        },
+        getArchetype() {
+          axios.
+            get(store.apiArchetype)
+            .then(element => {
+              console.log(element.data);
+              store.AppSearch = element.data;
             })
             .catch(err => {
               console.log(err);
@@ -39,7 +54,7 @@
 <template>
   <AppHeader/>
   <main>
-    <AppSearch/>
+    <AppSearch @change="getCharacters"/>
     <characterList />
   </main>
 </template>

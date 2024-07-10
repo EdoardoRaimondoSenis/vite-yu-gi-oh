@@ -21,7 +21,6 @@ import { store } from '../store.js'
 
 <template>
     <div class="containerCards">
-        <span class="numberFound">Found ... cards</span>
         <div class="alignCards">
             <div v-for="element in store.characterList.data" class="Cards">
                 <characterCard :info="element"/>
@@ -37,14 +36,6 @@ import { store } from '../store.js'
         padding: 3rem 5rem;
         background-color: white;
 
-        .numberFound {
-            display: flex;
-            width: calc(100% - 40px);
-            padding: 1rem 20px;
-            color: white;
-            background-color: black;
-        }
-
         .alignCards {
             display: flex;
             flex-direction: row;
@@ -53,7 +44,7 @@ import { store } from '../store.js'
             .Cards {
             display: flex;
             width: calc(100% / 5 - 4rem);
-            height: 35rem;
+            height: 30rem;
             margin: 1rem 2rem;
             background-color: chocolate;
         }
