@@ -15,8 +15,8 @@ import { store } from '../store.js'
 </script>
 
 <template>
-    <select @change="$emit('select')" v-model="store.searchOption" name="" id="">
-        <option v-for="element in store.apiArchetype" value="">{{ element }}</option>
+    <select @change="$emit('select')" v-model="store.searchOption" name="" id="searchOption">
+        <option v-for="element in store.ArchetypeList" value="">{{ element.archetype_name }}</option>
     </select>
 
 </template>
