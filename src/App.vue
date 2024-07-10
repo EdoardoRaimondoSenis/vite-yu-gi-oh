@@ -18,13 +18,11 @@
       getCharacters() {
         let origURL = store.apiURL;
         if (store.searchOption != '') {
-              console.log(store.searchOption);
               origURL += `&${store.apiArchetypeParam}=${store.searchOption}`
             }
         axios.
             get(origURL)
             .then(element => {
-              console.log(element.data);
               store.characterList = element.data;
             })
             .catch(err => {
@@ -35,7 +33,6 @@
           axios.
             get(store.apiArchetype)
             .then(element => {
-              console.log(element.data);
               store.ArchetypeList = element.data;
             })
             .catch(err => {
